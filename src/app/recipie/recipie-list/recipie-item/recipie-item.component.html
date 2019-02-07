@@ -1,0 +1,12 @@
+<a href="#" class="list-group-item clearfix" ><!--//*ngFor="let RecipieEl of recipie"  [recipie]="RecipieEl"-->
+  <a>
+    <div class="list-group-item-item" (click)="onSelected()">
+  <div class="pull-left">
+    <p class="list-group-item-heading">{{recipie.name}}</p>
+    <p class="list-group-item-text">{{recipie.discription}}</p>
+  </div>
+  <span class="pull-right">
+    <img src="{{recipie.imagePath}}" class="img-responsive" style="max-height:50px;">
+  </span>
+</div>
+</a>

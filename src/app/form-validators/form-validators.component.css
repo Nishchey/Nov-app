@@ -1,0 +1,5 @@
+body{padding: 20px}
+
+.form-cntrol .ng-touched .ng-invalid{
+  border:2px solid red;
+}
