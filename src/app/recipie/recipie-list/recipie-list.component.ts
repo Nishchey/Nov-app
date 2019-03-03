@@ -10,7 +10,7 @@ import { Recipie } from '../recipie.model';
   styleUrls: ['./recipie-list.component.css']
 })
 export class RecipieListComponent implements OnInit {
-@Output() recipieWasSelected = new EventEmitter<Recipie>();
+// @Output() recipieWasSelected = new EventEmitter<Recipie>();
   recipies: Recipie[];
 
   constructor(private _recipieService: RecipieService) { }
@@ -19,9 +19,9 @@ export class RecipieListComponent implements OnInit {
      this.recipies = this._recipieService.getRecipies();
     console.log(this.recipies);
   }
-  onRecipieSelected(recipie: Recipie) {
+ /* onRecipieSelected(recipie: Recipie) {
 this.recipieWasSelected.emit(recipie);
-  }
+  }*/
 
 }
 
