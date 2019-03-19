@@ -5,14 +5,17 @@ import { Ingredient } from 'src/app/Shared/ingredient.model';
   providedIn: 'root'
 })
 export class ShoppingListService {
-  ingredient: Ingredient[] =   [
+  ingredients: Ingredient[] =   [
     new Ingredient('Apples' , 5),
     new Ingredient('tomatoes', 10)
   ];
 
   getIngredients() {
     console.log('getIngredients() ->');
-    return this.ingredient;
+    return this.ingredients;
+  }
+  addIngredient(argIngredient: Ingredient) {
+this.ingredients.push(argIngredient);
   }
   constructor() { }
 }

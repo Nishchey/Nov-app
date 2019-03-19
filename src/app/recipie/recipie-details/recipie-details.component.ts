@@ -12,6 +12,11 @@ export class RecipieDetailsComponent implements OnInit {
 
   constructor(private _recipeService: RecipieService) { }
 
+  onAddShoppingList()
+  {
+this._recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  }
+
   ngOnInit() {
     console.log('recipie details component init');
 // this.recipe.name=this._recipeService.recipies.nam;

@@ -2,7 +2,7 @@ import { ShoppingListService } from './recipie/recipie-list/shopping-list.servic
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipieComponent } from './recipie/recipie.component';
@@ -30,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ShoppingEditComponent,
     DropDownDirective,
     FormValidatorsComponent,
+    routingComponent
   ],
   imports: [
     BrowserModule,
