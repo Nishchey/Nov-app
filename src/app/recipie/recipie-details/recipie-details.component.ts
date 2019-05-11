@@ -12,8 +12,7 @@ export class RecipieDetailsComponent implements OnInit {
 
   constructor(private _recipeService: RecipieService) { }
 
-  onAddShoppingList()
-  {
+  onAddShoppingList() {
 this._recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
   }
 
