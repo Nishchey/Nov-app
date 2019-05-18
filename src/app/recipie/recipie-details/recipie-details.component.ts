@@ -1,6 +1,7 @@
 import { RecipieService } from './../recipie.service';
 import { Recipie } from './../recipie.model';
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-recipie-details',
@@ -8,9 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./recipie-details.component.css']
 })
 export class RecipieDetailsComponent implements OnInit {
-  @Input() recipe: Recipie;
+recipe: Recipie;
+id: number;
 
-  constructor(private _recipeService: RecipieService) { }
+  constructor(private _recipeService: RecipieService, private route: ActivatedRoute) { }
 
   onAddShoppingList() {
 this._recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
@@ -18,6 +20,11 @@ this._recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
 
   ngOnInit() {
     console.log('recipie details component init');
+    this.route.params.subscribe(
+      (
+      (params: Params) => {this.id = +params['id'];
+      this.recipe = this._recipeService.getRecipie(this.id);
+    }));
 // this.recipe.name=this._recipeService.recipies.nam;
 
   }

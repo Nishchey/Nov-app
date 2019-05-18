@@ -1,6 +1,6 @@
 <a style="cursor : pointer" class="list-group-item clearfix" ><!--//*ngFor="let RecipieEl of recipie"  [recipie]="RecipieEl"-->
   <a>
-    <div class="list-group-item-item" (click)="onSelected()">
+    <div class="list-group-item-item" routerLinkActive="active">
   <div class="pull-left">
     <p class="list-group-item-heading">{{recipie.name}}</p>
     <p class="list-group-item-text">{{recipie.description}}</p>

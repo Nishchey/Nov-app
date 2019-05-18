@@ -16,6 +16,8 @@ import { FormValidatorsComponent } from './form-validators/form-validators.compo
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecipieEditComponent } from './recipie/recipie-edit/recipie-edit.component';
+import { RecipieStartComponent } from './recipie/recipie-start/recipie-start.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ShoppingEditComponent,
     DropDownDirective,
     FormValidatorsComponent,
-    routingComponent
+    routingComponent,
+    RecipieEditComponent,
+    RecipieStartComponent
   ],
   imports: [
     BrowserModule,
