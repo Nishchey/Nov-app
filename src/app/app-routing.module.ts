@@ -12,9 +12,9 @@ const routes: Routes = [
   {path: 'Recipie' , component: RecipieComponent,
   children: [
       {path: '', component : RecipieStartComponent},
-      {path: 'new', component : RecipieDetailsComponent},
+      {path: 'new', component : RecipieEditComponent},
       {path: ':id', component : RecipieDetailsComponent},
-      {path: ':id/edit', component : RecipieDetailsComponent},
+      {path: ':id/edit', component : RecipieEditComponent},
    ]
 },
   {path: 'ShoppingListComponent' , component: ShoppingListComponent},
