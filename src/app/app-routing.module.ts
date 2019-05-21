@@ -11,7 +11,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'app-header',  pathMatch: 'full' },
   {path: 'Recipie' , component: RecipieComponent,
   children: [
-      {path: '', component : RecipieStartComponent},{path: ':id', component : RecipieDetailsComponent},
+      {path: '', component : RecipieStartComponent},
+      {path: 'new', component : RecipieDetailsComponent},
+      {path: ':id', component : RecipieDetailsComponent},
+      {path: ':id/edit', component : RecipieDetailsComponent},
    ]
 },
   {path: 'ShoppingListComponent' , component: ShoppingListComponent},

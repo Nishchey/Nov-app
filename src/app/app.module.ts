@@ -1,3 +1,4 @@
+
 import { ShoppingListService } from './recipie/recipie-list/shopping-list.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -5,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipieComponent } from './recipie/recipie.component';
 import { RecipieListComponent } from './recipie/recipie-list/recipie-list.component';
 import { RecipieDetailsComponent } from './recipie/recipie-details/recipie-details.component';
 import { RecipieItemComponent } from './recipie/recipie-list/recipie-item/recipie-item.component';
@@ -18,6 +18,7 @@ import { FormValidatorsComponent } from './form-validators/form-validators.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecipieEditComponent } from './recipie/recipie-edit/recipie-edit.component';
 import { RecipieStartComponent } from './recipie/recipie-start/recipie-start.component';
+import { RecipieComponent } from './recipie/recipie.component';
 
 
 @NgModule({
