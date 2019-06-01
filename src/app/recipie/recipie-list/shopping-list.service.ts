@@ -25,7 +25,7 @@ this.IngredientsChange.next(this.ingredients.slice());
   addIngredients(argIngredient: Ingredient[]) {
     // tslint:disable-next-line: comment-format
     // tslint:disable-next-line:max-line-length
-    this.ingredients.push(...argIngredient); //3 dots The spread operator return all elements of an array. Like you would write each element separately
+    this.ingredients.push(...argIngredient); // 3 dots The spread operator return all elements of an array. Like you would write each element separately
     this.IngredientsChange.next(this.ingredients.slice());
       }
 

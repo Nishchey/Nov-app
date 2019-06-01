@@ -1,3 +1,4 @@
+import { FormValidatorsComponent } from './form-validators/form-validators.component';
 import { RecipieStartComponent } from './recipie/recipie-start/recipie-start.component';
 import { RecipieEditComponent } from './recipie/recipie-edit/recipie-edit.component';
 import { NgModule, Component } from '@angular/core';
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path: 'ShoppingListComponent' , component: ShoppingListComponent},
   // {path: 'RecipieComponent' , component: RecipieComponent},
   {path: 'Recipie/RecipieDetails' , component: RecipieDetailsComponent},
-  // {path: ':id' , component: RecipieEditComponent},
+  {path: 'FormsComponent' , component: FormValidatorsComponent},
   // {path: '**' , component: RecipieStartComponent}
 ];
 @NgModule({

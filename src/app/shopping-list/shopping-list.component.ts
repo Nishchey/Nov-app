@@ -8,9 +8,9 @@ import { Subscription } from 'rxjs';
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css']
 })
-export class ShoppingListComponent implements OnInit,OnDestroy {
+export class ShoppingListComponent implements OnInit, OnDestroy {
  ingredients: Ingredient[] ;
- mysubscription : Subscription;
+ mysubscription: Subscription;
 // =   [  new Ingredient('Apples' , 5),
 //   new Ingredient('tomatoes', 10  )
 // ];
