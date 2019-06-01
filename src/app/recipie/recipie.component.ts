@@ -9,16 +9,16 @@ import { Component, OnInit } from '@angular/core';
   providers: [RecipieService]
 })
 export class RecipieComponent implements OnInit {
-selectedRecipie: Recipie;
+// selectedRecipie: Recipie;
   constructor(private  _recipieService: RecipieService) { }
 
   ngOnInit() {
-    this._recipieService.recipieSelected.subscribe(
-      (recipie: Recipie) => {
-      this.selectedRecipie = recipie;
-    console.log('ngOnInit.this._recipieService.recipieSelected.subscribe()');
-   }
-    );
+  //   this._recipieService.recipieSelected.subscribe(
+  //     (recipie: Recipie) => {
+  //     this.selectedRecipie = recipie;
+  //   console.log('ngOnInit.this._recipieService.recipieSelected.subscribe()');
+  //  }
+  //   );
   }
 
 }

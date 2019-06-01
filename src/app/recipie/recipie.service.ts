@@ -9,7 +9,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
 })
 export class RecipieService {
 
-  recipieSelected = new EventEmitter<Recipie>();
+  // recipieSelected = new EventEmitter<Recipie>();
 
    recipies: Recipie[] = [
     // tslint:disable-next-line:max-line-length
