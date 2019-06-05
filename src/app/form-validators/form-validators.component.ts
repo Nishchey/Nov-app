@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-validators.component.css']
 })
 export class FormValidatorsComponent implements OnInit {
-  defaultName = 'Welcome User';
+  defaultName = 'UserName';
+  genders = [ 'Male', 'Female'];
   constructor() { }
 
   ngOnInit() {
