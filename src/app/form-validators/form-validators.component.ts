@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-validators',
@@ -6,11 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-validators.component.css']
 })
 export class FormValidatorsComponent implements OnInit {
-  defaultName = 'UserName';
+  defaultName = 'userForm';
+  SuggestName = 'Suggested Name';
   genders = [ 'Male', 'Female'];
+  @ViewChild('userForm') signUpForm: NgForm;
   constructor() { }
 
+  suggestUserName(){
+    this.signUpForm.form.patchValue({
+      userData:{
+        IDK : this.SuggestName
+      }
+    });
+    console.log('suggestUserName() fired , firstName -> ',this.signUpForm.form);
+  }
   ngOnInit() {
   }
 
+  onSubmit(){
+    console.log(this.signUpForm);
+  }
 }
