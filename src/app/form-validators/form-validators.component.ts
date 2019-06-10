@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./form-validators.component.css']
 })
 export class FormValidatorsComponent implements OnInit {
-  defaultName = 'userForm';
+  defaultName = 'Default Name';
   SuggestName = 'Suggested Name';
   genders = [ 'Male', 'Female'];
   @ViewChild('userForm') signUpForm: NgForm;
@@ -15,9 +15,7 @@ export class FormValidatorsComponent implements OnInit {
 
   suggestUserName(){
     this.signUpForm.form.patchValue({
-      userData:{
         IDK : this.SuggestName
-      }
     });
     console.log('suggestUserName() fired , firstName -> ',this.signUpForm.form);
   }

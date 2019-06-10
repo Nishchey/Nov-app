@@ -1,7 +1,7 @@
-<form class="form-group" #userForm="ngForm" (ngSubmit)='onSubmit()' class="solidBorderWithPadding" class="container" id="userForm">
+<form class="form-group" #userForm="ngForm" (ngSubmit)="onSubmit()" class="solidBorderWithPadding" class="container" id="userForm">
   <div>
     <label for="firstName">First Name </label>
-    <input required minlength="3" ngModel name="IDK" #firstName="ngModel"  type="text" id="firstName" class="form-control" class='form-control'>
+    <input required minlength="3" [(ngModel)]="defaultName" name="IDK" #firstName="ngModel"  type="text" id="firstName" class="form-control" class='form-control'>
     <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid"> Not valid      </div>
     <div  *ngIf="firstName.touched"> Welcome {{defaultName}}     </div>
 
