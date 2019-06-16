@@ -1,0 +1,27 @@
+<form [formGroup]="signupForm" class="form-group"  class="solidBorderWithPadding" class="container" id="userForm">
+  <div>
+    <label for="firstName">First Name </label>
+    <input required minlength="3"  name="IDK"   type="text" formControlName="userName" id="firstName" class="form-control" class='form-control'>
+
+
+    <button class="btn btn-primary" type="button">Suggest Name</button>
+    <br>
+
+    <label for="lastName">Last Name </label>
+    <input required minlength="3"   type="text" formControlName="lastName" class="form-control">
+  </div>
+
+  <div>
+    <label for="PhoneNum">Phone Number  </label>
+    <input required minlength="11" name='PhoneNum' type="text" formControlName="PhoneNum"  class="form-control">
+  </div>
+
+  <div class="radio" *ngFor="let g of genders">
+    <label>
+      <input type="radio" name="g" formControlName="g" [value]="g">
+      {{g}}
+    </label>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Validation</button>
+</form>

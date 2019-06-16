@@ -1,3 +1,4 @@
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FormValidatorsComponent } from './form-validators/form-validators.component';
 import { RecipieStartComponent } from './recipie/recipie-start/recipie-start.component';
 import { RecipieEditComponent } from './recipie/recipie-edit/recipie-edit.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   // {path: 'RecipieComponent' , component: RecipieComponent},
   {path: 'Recipie/RecipieDetails' , component: RecipieDetailsComponent},
   {path: 'FormsComponent' , component: FormValidatorsComponent},
+  {path: 'ReactiveFormComponent' , component: ReactiveFormComponent},
   // {path: '**' , component: RecipieStartComponent}
 ];
 @NgModule({
