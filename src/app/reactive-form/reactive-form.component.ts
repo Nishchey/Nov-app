@@ -11,6 +11,9 @@ genders = ['male', 'female'];
 signupForm: FormGroup;
   constructor() { }
 
+  onSubmit(){
+    console.log(this.signupForm);
+  }
   ngOnInit() {
     this.signupForm = new FormGroup(
       {
