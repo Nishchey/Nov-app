@@ -15,7 +15,11 @@
     <label for="PhoneNum">Phone Number  </label>
     <input required minlength="11" name='PhoneNum' type="text" formControlName="PhoneNum"  class="form-control">
   </div>
-
+  <!-- <br> -->
+  <span class="alert alert-warning"
+  *ngIf="!signupForm.get('PhoneNum').valid && signupForm.get('PhoneNum').touched"
+  style="margin: 5px 5px 5px 5px ; padding : 5px 5px 5px 5px"> Please enter valid Phone number</span>
+  <!-- <br> -->
   <div class="radio" *ngFor="let g of genders">
     <label>
       <input type="radio" name="g" formControlName="g" [value]="g">
