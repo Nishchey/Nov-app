@@ -26,6 +26,16 @@
       {{g}}
     </label>
   </div>
+<div formArrayName="hobbies">
+ <label>Do ya have any Hobby</label> <br>
+  <button class="btn btn-primary" (click)="onAddHobby()">Yea,I have one</button>
+  <div class="form-group"
 
-  <button class="btn btn-primary" type="submit">Validation</button>
+  *ngFor="let hobbyControl of signupForm.get('hobbies')['controls'];let i=index ">
+    <input type="text" class="form-control" [formControlName]="i">
+  </div>
+</div>
+
+<br> <!-- For form submit space -->
+  <button class="btn btn-primary" type="submit">Submit</button>
 </form>
