@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit {
 genders = ['male', 'female'];
 signupForm: FormGroup;
-
+forbiddenHobbies =['studying' , 'reading' ];
   constructor() { }
 
   onSubmit(){
@@ -17,18 +17,23 @@ signupForm: FormGroup;
   }
 
  onAddHobby(){
-const control = new FormControl(null,Validators.required);
+const control = new FormControl(null,[Validators.required,this.forbiddenHobiesValidator.bind(this)]);
 (<FormArray>this.signupForm.get('hobbies')).push(control);
   }
 
-  getControls() {
-    return (<FormArray>this.signupForm.get('controlName')).controls;
+
+forbiddenHobiesValidator(control: FormControl):{[s: string] :boolean}
+{
+  if(this.forbiddenHobbies.indexOf(control.value) !== -1){
+    return{'your_Hobbie_Sucks': true}
   }
+ return null;
+}
 
   ngOnInit() {
     this.signupForm = new FormGroup(
       {
-        'userName' : new FormControl('initialize  userName', Validators.required),
+        'userName' : new FormControl('initialize  userName',[ Validators.required, this.forbiddenHobiesValidator.bind(this)]),
         'lastName' : new FormControl('initialize  lastName'),
         'PhoneNum' : new FormControl('+91 ', [Validators.required, Validators.minLength(14)]),
         'g' : new FormControl('male'),
