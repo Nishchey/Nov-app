@@ -4,6 +4,11 @@
     <input required minlength="3"  name="IDK"   type="text" formControlName="userName" id="firstName" class="form-control" class='form-control'>
 
 
+<div *ngIf="signupForm.get('userName').errors">
+  <div class="alert alert-success" role="alert" *ngIf="signupForm.get('userName').errors['nice_name_m8']">
+    <span >Nice Name there dude (•̀ᴗ•́)و ̑̑ </span>
+  </div>
+</div>
     <button class="btn btn-primary" type="button">Suggest Name</button>
     <br>
 

@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit {
 genders = ['male', 'female'];
 signupForm: FormGroup;
-forbiddenHobbies =['studying' , 'reading' ];
+niceNames =['Nish' , 'reading' ];
   constructor() { }
 
   onSubmit(){
@@ -17,15 +17,15 @@ forbiddenHobbies =['studying' , 'reading' ];
   }
 
  onAddHobby(){
-const control = new FormControl(null,[Validators.required,this.forbiddenHobiesValidator.bind(this)]);
+const control = new FormControl(null,[Validators.required,this.niceNamesValidator.bind(this)]);
 (<FormArray>this.signupForm.get('hobbies')).push(control);
   }
 
 
-forbiddenHobiesValidator(control: FormControl):{[s: string] :boolean}
+niceNamesValidator(control: FormControl):{[s: string] :boolean}
 {
-  if(this.forbiddenHobbies.indexOf(control.value) !== -1){
-    return{'your_Hobbie_Sucks': true}
+  if(this.niceNames.indexOf(control.value) !== -1){
+    return{'nice_name_m8': true}
   }
  return null;
 }
@@ -33,7 +33,7 @@ forbiddenHobiesValidator(control: FormControl):{[s: string] :boolean}
   ngOnInit() {
     this.signupForm = new FormGroup(
       {
-        'userName' : new FormControl('initialize  userName',[ Validators.required, this.forbiddenHobiesValidator.bind(this)]),
+        'userName' : new FormControl('initialize  userName',[ Validators.required, this.niceNamesValidator.bind(this)]),
         'lastName' : new FormControl('initialize  lastName'),
         'PhoneNum' : new FormControl('+91 ', [Validators.required, Validators.minLength(14)]),
         'g' : new FormControl('male'),
