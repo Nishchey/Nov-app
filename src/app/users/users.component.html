@@ -1,0 +1,26 @@
+<form  (ngSubmit)="onSubmit('usersForm')" class="form-group"  class="solidBorderWithPadding" class="container" >
+  <div>
+    <label for="firstName">First Name </label>
+    <input required minlength="3" [(ngModel)]="addUserData.name" name="firstName"   type="text" id="firstName" class="form-control" class='form-control'>
+
+
+<!-- <div *ngIf="usersForm.get('firstName').errors">
+    <span >Name is not valid (•̀ᴗ•́)و ̑̑ </span>
+  </div> -->
+
+  <!-- <button class="btn btn-primary" type="submit"[disabled]="firstName.invalid">Submit </button> -->
+</div>
+<div>
+  <label for="email">Email </label>
+  <input required minlength="3" [(ngModel)]="addUserData.email" name="email"   type="email"  id="email" class="form-control" class='form-control'>
+</div>
+<button class="btn btn-primary" type="button" (click)='onSubmit()'>Submit</button>
+<!-- <button class="btn btn-primary" type="submit" >Submit</button> -->
+</form>
+
+<ul>
+  <li *ngFor="let user of users">
+  Name :  {{ user.name }}
+  Email : {{ user.email}}
+  </li>
+</ul>

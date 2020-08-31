@@ -20,6 +20,7 @@ import { RecipieEditComponent } from './recipie/recipie-edit/recipie-edit.compon
 import { RecipieStartComponent } from './recipie/recipie-start/recipie-start.component';
 import { RecipieComponent } from './recipie/recipie.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     routingComponent,
     RecipieEditComponent,
     RecipieStartComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

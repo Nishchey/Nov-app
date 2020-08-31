@@ -8,6 +8,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipieComponent } from './recipie/recipie.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipieDetailsComponent } from './recipie/recipie-details/recipie-details.component';
+import { UsersComponent } from './users/users.component';
 // path is case sensitive
 const routes: Routes = [
   { path: '', redirectTo: 'app-header',  pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'Recipie/RecipieDetails' , component: RecipieDetailsComponent},
   {path: 'FormsComponent' , component: FormValidatorsComponent},
   {path: 'ReactiveFormComponent' , component: ReactiveFormComponent},
+  {path: 'UsersComponent' , component: UsersComponent},
   // {path: '**' , component: RecipieStartComponent}
 ];
 @NgModule({
