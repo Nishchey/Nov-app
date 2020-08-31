@@ -26,7 +26,8 @@ export class UsersComponent implements OnInit {
   ngOnInit() {}
 
   addUser(addUserData) {
-     this.users.push(addUserData);
+    var newobj = Object.assign({}, addUserData); //reference type , overwrites value of old variable instead of adding new
+     this.users.push(newobj);
   }
   onSubmit(e) {
     console.log(
