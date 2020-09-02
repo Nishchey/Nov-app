@@ -1,3 +1,4 @@
+import { UserserviceService } from './../Services/userservice.service';
 import { User } from './../Model/user';
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { getMaxListeners } from 'process';
@@ -8,26 +9,23 @@ import { getMaxListeners } from 'process';
   styleUrls: ["./users.component.css"],
 })
 export class UsersComponent implements OnInit {
-  users?: User[] = [
-    {
-      name: "test1",
-      email: "test@gmail.com",
-    },
-    {
-      name: "test2",
-      email: "test2@gmail.com",
-    }
-  ];
+   users?: User[];
   addUserData: User = { name: null, email: null };
   // @ViewChild("usersForm") form: any;
   bannerMsg: string = null;
-  constructor() {}
+  constructor(private _userService: UserserviceService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.users=this._userService.getUsers(); //without Observable
+    this._userService.getUsers().subscribe(data=>{console.log("Observale Data "+data);
+  this.users = data;
+  });
+    console.log("Users ngOnInit ="+this.users);
+  }
 
   addUser(addUserData) {
     var newobj = Object.assign({}, addUserData); //reference type , overwrites value of old variable instead of adding new
-     this.users.push(newobj);
+     this.users.unshift(newobj);
   }
   onSubmit(e) {
     console.log(

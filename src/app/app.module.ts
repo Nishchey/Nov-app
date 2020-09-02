@@ -21,6 +21,7 @@ import { RecipieStartComponent } from './recipie/recipie-start/recipie-start.com
 import { RecipieComponent } from './recipie/recipie.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { UsersComponent } from './users/users.component';
+import { UserserviceService } from './Services/userservice.service';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { UsersComponent } from './users/users.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, UserserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
