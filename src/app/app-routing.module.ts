@@ -1,3 +1,4 @@
+import { PostsUserService } from './Services/posts-user.service';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FormValidatorsComponent } from './form-validators/form-validators.component';
 import { RecipieStartComponent } from './recipie/recipie-start/recipie-start.component';
@@ -9,6 +10,7 @@ import { RecipieComponent } from './recipie/recipie.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipieDetailsComponent } from './recipie/recipie-details/recipie-details.component';
 import { UsersComponent } from './users/users.component';
+import { PostsComponent } from './posts/posts.component';
 // path is case sensitive
 const routes: Routes = [
   { path: '', redirectTo: 'app-header',  pathMatch: 'full' },
@@ -26,6 +28,7 @@ const routes: Routes = [
   {path: 'FormsComponent' , component: FormValidatorsComponent},
   {path: 'ReactiveFormComponent' , component: ReactiveFormComponent},
   {path: 'UsersComponent' , component: UsersComponent},
+  {path: 'PostsComponent' , component: PostsComponent},
   // {path: '**' , component: RecipieStartComponent}
 ];
 @NgModule({

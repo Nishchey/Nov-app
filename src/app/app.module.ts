@@ -1,3 +1,4 @@
+import { PostsUserService } from './Services/posts-user.service';
 
 import { ShoppingListService } from './recipie/recipie-list/shopping-list.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +23,9 @@ import { RecipieComponent } from './recipie/recipie.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { UsersComponent } from './users/users.component';
 import { UserserviceService } from './Services/userservice.service';
+import { PostsComponent } from './posts/posts.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -40,15 +44,17 @@ import { UserserviceService } from './Services/userservice.service';
     RecipieEditComponent,
     RecipieStartComponent,
     ReactiveFormComponent,
-    UsersComponent
+    UsersComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [ShoppingListService, UserserviceService],
+  providers: [ShoppingListService, UserserviceService, PostsUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
