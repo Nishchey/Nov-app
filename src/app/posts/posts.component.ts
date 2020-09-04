@@ -1,6 +1,6 @@
+import { Posts } from './../Model/posts';
 import { PostsUserService } from './../Services/posts-user.service';
 import { Component, OnInit } from '@angular/core';
-import { Posts } from '../Model/posts';
 
 @Component({
   selector: 'app-posts',
@@ -17,8 +17,11 @@ ngOnInit() {
     //console.log(data);
 this.posts = data;
   });
-
   //this._postService.debug();
+}
+
+onNewPost(post: Posts){
+  this.posts.unshift(post);
 }
 
 }
