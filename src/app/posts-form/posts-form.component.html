@@ -1,0 +1,10 @@
+<div class="card card-body mb-3">
+<form>
+  <label for="Title">First name:</label><br>
+  <input type="text" #title name="title"><br>
+  <label for="body">Body:</label><br>
+  <input type="text" #body name="body">
+  <br>
+  <button (click)="AddPosts(title.value,body.value)" class="btn">Add Post</button>
+</form>
+</div>

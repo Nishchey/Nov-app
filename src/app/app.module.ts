@@ -26,6 +26,7 @@ import { UserserviceService } from './Services/userservice.service';
 import { PostsComponent } from './posts/posts.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { PostsFormComponent } from './posts-form/posts-form.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     RecipieStartComponent,
     ReactiveFormComponent,
     UsersComponent,
-    PostsComponent
+    PostsComponent,
+    PostsFormComponent
   ],
   imports: [
     BrowserModule,
