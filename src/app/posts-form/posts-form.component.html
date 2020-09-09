@@ -1,10 +1,12 @@
 <div class="card card-body mb-3">
 <form>
-  <label for="Title">First name:</label><br>
-  <input type="text" #title name="title"><br>
+  <label for="Title" >Title:</label><br>
+  <input type="text" [(ngModel)]="currentPost.title" #title name="title"><br>
   <label for="body">Body:</label><br>
-  <input type="text" #body name="body">
+  <input type="text" [(ngModel)]="currentPost.body" #body name="body">
+  <input type="hidden" [(ngModel)]="currentPost.id" #id name="id">
   <br>
-  <button (click)="AddPosts(title.value,body.value)" class="btn">Add Post</button>
+  <button *ngIf="!isEdit" (click)="AddPosts(title.value,body.value)" class="btn">Add Post</button>
+  <button *ngIf="isEdit" (click)="updatePost()" class="btn">Update Post</button>
 </form>
 </div>

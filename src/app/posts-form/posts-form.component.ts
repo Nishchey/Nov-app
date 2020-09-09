@@ -1,5 +1,5 @@
 import { Posts } from './../Model/posts';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { PostsUserService } from '../Services/posts-user.service';
 import { Observable } from 'rxjs';
 
@@ -14,6 +14,8 @@ export class PostsFormComponent implements OnInit {
   constructor(private _postService: PostsUserService) { }
 post: Posts;
 @Output() newPost: EventEmitter<Posts> = new EventEmitter();
+@Input() currentPost: Posts;
+@Input() isEdit: boolean;
   ngOnInit() {
   }
   AddPosts(title,body){
@@ -25,6 +27,14 @@ post: Posts;
         this.newPost.emit(data);
       });
     }
+  }
+
+  updatePost(){
+    console.log("updatepost");
+    this._postService.updatePost(this.currentPost).subscribe(
+      post=>console.log(post),
+    );
+    this.isEdit=false;
   }
 
 }

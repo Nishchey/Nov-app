@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import {HttpClient,   HttpHeaders} from '@angular/common/http';
 import { Posts } from '../Model/posts';
+//import { url } from 'inspector'; //cause issue;
 
 const httpOptions = { headers: new HttpHeaders({'content-Type':'application/json'}) }; // Cannot define const inside Class
 
@@ -21,6 +22,10 @@ export class PostsUserService {
 savePost(data: Posts): Observable<Posts> {
 return this.http.post<Posts>(this.postsUrl, data, httpOptions);
 }
+
+updatePost(post: Posts): Observable<Posts>{
+  const updateUrl=`${this.postsUrl}/${post.id}`;
+  return this.http.put<Posts>(updateUrl, post, httpOptions);
 
   debug() {
     console.log("Debug()");
