@@ -1,6 +1,7 @@
 import { Posts } from './../Model/posts';
 import { PostsUserService } from './../Services/posts-user.service';
 import { Component, OnInit } from '@angular/core';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: "app-posts",
@@ -31,5 +32,31 @@ export class PostsComponent implements OnInit {
   editPost(post: Posts) {
     this.currentPost = post;
     this.isEdit=true;
+
   }
+
+  removePost(post: Posts) {
+  if(confirm('Are you sure !')){
+
+  }
+  }
+
+  onUpdatedPost(post: Posts){
+    this.posts.forEach(
+      (item,index)=>{
+        if(item.id===post.id){
+          this.posts.slice(index,1);
+          this.posts.unshift(post);
+          this.isEdit=false;
+          this.currentPost={
+            id: 0,
+            title:'',
+            body: ''
+          }
+        }
+      }
+    );
+  }
+
+
 }

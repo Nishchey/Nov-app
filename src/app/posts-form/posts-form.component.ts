@@ -16,6 +16,7 @@ post: Posts;
 @Output() newPost: EventEmitter<Posts> = new EventEmitter();
 @Input() currentPost: Posts;
 @Input() isEdit: boolean;
+@Output() updatedPost: EventEmitter<Posts> = new EventEmitter();
   ngOnInit() {
   }
   AddPosts(title,body){
@@ -32,9 +33,13 @@ post: Posts;
   updatePost(){
     console.log("updatepost");
     this._postService.updatePost(this.currentPost).subscribe(
-      post=>console.log(post),
+      (post) => {
+        console.log(post);
+        this.isEdit = false;
+        this.updatedPost.emit(post);
+      }
     );
-    this.isEdit=false;
+
   }
 
 }

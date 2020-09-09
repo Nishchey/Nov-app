@@ -26,6 +26,7 @@ return this.http.post<Posts>(this.postsUrl, data, httpOptions);
 updatePost(post: Posts): Observable<Posts>{
   const updateUrl=`${this.postsUrl}/${post.id}`;
   return this.http.put<Posts>(updateUrl, post, httpOptions);
+}
 
   debug() {
     console.log("Debug()");
